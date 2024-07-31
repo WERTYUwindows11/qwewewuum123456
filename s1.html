@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微信支付 (如果你用微信中打开这个网站时)</title>
+  <style>
+        /* 弹窗背景 */
+        .modal-overlay {
+            display: none; /* 默认隐藏 */
+            position: fixed; /* 固定定位 */
+            z-index: 1; /* 置于顶层 */
+            left: 0;
+            top: 0;
+            width: 100%; /* 宽度100% */
+            height: 100%; /* 高度100% */
+            overflow: auto; /* 如果需要滚动条 */
+            background-color: rgb(0,0,0); /* 背景颜色 */
+            background-color: rgba(0,0,0,0.4); /* 背景颜色，带有透明度 */
+        }
+
+        /* 弹窗内容 */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% 从顶部和自动水平 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* 宽度80% */
+        }
+
+        /* 关闭按钮 */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 弹窗内容 -->
+    <div id="myModal" class="modal-overlay">
+        <!-- 弹窗内容 -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>支付前请认真阅读:↓</h2>
+            <h3>支付后24小时之内,无理由退款</h3>
+            <h3>暂时还不支持,上门服务</h3>
+            <h3>支付后,请到安心烟卡取货地取货</h3>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后立即执行的函数
+        window.onload = function() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        };
+
+        // 关闭弹窗的函数
+        function closePopup() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // 获取关闭按钮元素
+        var span = document.getElementsByClassName("close")[0];
+
+        // 当用户点击 <span> (x), 关闭弹窗
+        span.onclick = function() {
+            closePopup();
+        }
+
+        // 当用户点击弹窗外的任何地方时，关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closePopup();
+            }
+        }
+    </script>
+    <h2>微信支付</h2>
+    <h2>请扫描下面的二维码</h2>
+    <img src="https://wertyu.232400.xyz/file/69beab91047d810442763.png"/ width="200">
+    <h3>或用微信打开这个网页，识别二维码</h3>
+    <h3>如图展示:↓</h3>
+    <img src="Screenshot_20240728_191603_edit_254720440518335.jpg"/ width="300" height="62">
+    <h2>如果实在不行</h2>
+    <h2>长按二维码,点击保存到手机</h2>
+    <body>
+    <button id="openWeChatBtn">点我打开微信</button>
+    <script>
+        document.getElementById('openWeChatBtn').addEventListener('click', function() {
+            if (window.WeixinJSBridge && window.WeixinJSBridge.invoke) {
+                window.location.href = 'weixin://';
+            } else {
+                alert('请先安装微信');
+            }
+        });
+    </script>
+</body>
+<h3>然后点击打开微信按钮或打开微信,进入微信二维码界面,点击右下角相册选项</h3>
+<h3>如图展示:↓</h3>
+<img src="Screenshot_20240728_192146_edit_255043486724123.jpg"/ width="300" height="120">
+<h3>选择刚才保存好的照片,进行付款</h3>
+<h3>或加入我们群,进行支付和联系客服,让客服来帮你</h3>
+<h3>客服信息:↓</h3>
+<h3>电话:17822404621</h3>
+</body>
+    <h2>支付前请认真阅读:↓</h2>
+    <h3>支付后24小时之内,无理由退款</h3>
+    <h3>暂时还不支持,上门服务</h3>
+    <h3>支付后,请到安心烟卡取货地取货</h3>
+    <p>未经授权,禁止抄袭 @ 2024</p>
+<p>Powered by 安心商店</p>
+</body>
+</html>
